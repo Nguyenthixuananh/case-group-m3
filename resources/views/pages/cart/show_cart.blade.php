@@ -145,7 +145,7 @@
                         <li>Thành tiền <span>{{\Gloudemans\Shoppingcart\Facades\Cart::total().'VND'}}</span></li>
                     </ul>
                     <a class="btn btn-default update" href="">Update</a>
-                    <a class="btn btn-default check_out" href="">Check Out</a>
+                    <a class="btn btn-default check_out" href="{{\Illuminate\Support\Facades\URL::to('/login-checkout')}}">Check Out</a>
                 </div>
             </div>
         </div>
