@@ -1,11 +1,17 @@
 @extends('welcome')
-@section('content');
+@section('content')
 
 @foreach($product_detail as $key=>$value)
     <div class="product-details"><!--product-details-->
         <div class="col-sm-5">
             <div class="view-product">
+<<<<<<< HEAD
                 <img src="{{ asset('upload/product/'.$value->product_image) }}" class="newarrival" alt=""/>
+=======
+                <img src="{{ asset('upload/product/' . $value->product_image) }}" width="100px">
+{{--                <img src="{{\Illuminate\Support\Facades\URL::to('/public/upload/product/'.$value->product_image)}}"--}}
+{{--                     alt=""/>--}}
+>>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                 <h3>ZOOM</h3>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">

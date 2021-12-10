@@ -33,7 +33,11 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
                                     <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
+<<<<<<< HEAD
                                     <img src="{{ asset('upload/product/'. $pro->product_image) }}" height="100px" width="100px">
+=======
+                                    <img src="{{ asset('upload/product/' . $pro->product_image) }}" width="100px">
+>>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô tả sản phẩm</label>

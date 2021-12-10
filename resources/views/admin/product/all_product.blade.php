@@ -47,7 +47,11 @@
                             </td>
                             <td>{{ $pro->product_name }}</td>
                             <td>{{ $pro->product_price }}</td>
+<<<<<<< HEAD
                             <td><img src="{{ asset('upload/product/'. $pro->product_image) }}" width="100px"></td>
+=======
+                            <td><img src="{{ asset('upload/product/' . $pro->product_image) }}" width="100px"></td>
+>>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                             <td>{{ $pro->category_name }}</td>
                             <td>{{ $pro->brand_name }}</td>
                             <td><span class="text-ellipsis">
