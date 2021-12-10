@@ -11,6 +11,7 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
+                        <img  alt="">
                         <img src="{{\Illuminate\Support\Facades\URL::to('public/upload/product/'.$product->product_image)}}" alt="" />
                         <h3>{{$product->product_price}} VNĐ</h3>
                         <p>{{$product->product_name}}</p>
