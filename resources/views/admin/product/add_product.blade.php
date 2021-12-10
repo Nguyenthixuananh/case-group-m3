@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Thêm sản phẩm
+                    Thêm sản phẩm :)))
                 </header>
                 <?php
                 $message = \Illuminate\Support\Facades\Session::get('message');
