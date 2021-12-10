@@ -5,8 +5,7 @@
     <div class="product-details"><!--product-details-->
         <div class="col-sm-5">
             <div class="view-product">
-                <img src="{{\Illuminate\Support\Facades\URL::to('/public/upload/product/'.$value->product_image)}}"
-                     alt=""/>
+                <img src="{{ asset('upload/product/'.$value->product_image) }}" class="newarrival" alt=""/>
                 <h3>ZOOM</h3>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -38,10 +37,10 @@
         </div>
         <div class="col-sm-7">
             <div class="product-information"><!--/product-information-->
-                <img src="images/product-details/new.jpg" class="newarrival" alt=""/>
+                {{-- <img src="{{ asset('upload/product/'.$value->product_image) }}" class="newarrival" alt=""/> --}}
                 <h2>{{$value->product_name}}</h2>
                 <p>Mã ID: {{$value->product_id}}</p>
-                <img src="images/product-details/rating.png" alt=""/>
+                {{-- <img src="{{ asset('upload/product/'.$value->product_image) }}" class="newarrival" alt=""/> --}}
 
                 <form action="{{\Illuminate\Support\Facades\URL::to('/save-cart')}}" method="post">
                     @csrf

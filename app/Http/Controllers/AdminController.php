@@ -35,7 +35,7 @@ class AdminController extends Controller
     {
 //        $this->authLogin();
      $admin_email = $request->admin_email;
-     $admin_password = $request->admin_password;
+     $admin_password = md5(trim($request->admin_password));
 
      $result = DB::table('tbl_admin')
          ->where('admin_email',$admin_email)
