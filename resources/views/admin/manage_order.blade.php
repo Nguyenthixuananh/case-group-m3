@@ -28,7 +28,7 @@
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Tên người đặt</th>
+                        <th>Email người đặt</th>
                         <th>Tổng giá tiền</th>
                         <th>Tình trạng</th>
                         <th>Xem chi tiết</th>
@@ -40,7 +40,7 @@
                     @foreach($all_order as $key => $order)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{ $order->customer_name }}</td>
+                            <td>{{ $order->customer_email }}</td>
                             <td>{{ $order->order_total }}</td>
                             <td>{{ $order->order_status }}</td>
 

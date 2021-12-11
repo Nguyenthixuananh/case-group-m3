@@ -84,7 +84,7 @@ Route::get('/delete-to-cart/{rowId}',[CartController::class, 'delete_to_cart']);
 Route::post('/add-cart-ajax',[CartController::class, 'add_cart_ajax']);
 Route::get('/gio-hang',[CartController::class, 'gio_hang']);
 Route::post('/update-cart',[CartController::class, 'update_cart']);
-Route::get('/del-product/{session_id}',[CartController::class, 'delete_product']);
+Route::get('/delete-product-ajax/{session_id}',[CartController::class, 'delete_product']);
 Route::get('/del-all-product',[CartController::class, 'delete_all_product']);
 
 

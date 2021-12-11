@@ -38,7 +38,9 @@
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
                             <li><a href="#"><i class="fa fa-phone"></i> +84 94 212 6862</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> HoangVQ-Depzai-Top1@gmail.com</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope"></i> HoangVQ-Depzai-Top1@gmail.com</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -73,6 +75,8 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/trang-chu')}}"><i class="fa fa-lock"></i> Trang chủ</a></li>
+
 
                             <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
                             <?php
@@ -95,7 +99,7 @@
                             ?>
 
 
-                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/gio-hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
                             <?php
                             $customer_id = Session::get('customer_id');
                             if($customer_id!=NULL){

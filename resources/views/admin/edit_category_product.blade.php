@@ -28,6 +28,13 @@
                                 <textarea style="resize: none" rows="5" name="category_product_desc" class="form-control" id="exampleInputPassword1"
                                           value="{{$edit_value->category_desc}}"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Hiển thị</label>
+                                <select name="category_product_status" class="form-control input-sm m-bot15">
+                                    <option value="0">Ẩn</option>
+                                    <option value="1">Hiển thị</option>
+                                </select>
+                            </div>
 
                             <button type="submit" name="update_category_product" class="btn btn-info">Cập nhật</button>
                         </form>

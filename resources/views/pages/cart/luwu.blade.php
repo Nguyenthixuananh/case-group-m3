@@ -8,16 +8,8 @@
                 <li class="active">Giỏ hàng của bạn</li>
             </ol>
         </div>
-        <?php
-        $message = \Illuminate\Support\Facades\Session::get('message');
-        if ($message) {
-            echo '<p class="text-danger" style="color: red">'.$message.'</p>';
-            \Illuminate\Support\Facades\Session::put('message', null);
-        }
-        ?>
         <div class="table-responsive cart_info">
-            <form action="{{url('/update-cart')}}" method="POST">
-                @csrf
+
             <table class="table table-condensed">
                 <thead>
                 <tr class="cart_menu">
@@ -53,9 +45,12 @@
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
+                                <form action="" method="POST">
 
-                                    <input class="cart_quantity_" type="number" min="1" name="cart_qty[{{$cart['session_id']}}]" value="{{$cart['product_qty']}}"  >
+                                    <input class="cart_quantity_" type="number" min="1" name="cart_quantity" value="{{$cart['product_qty']}}"  >
 
+                                    <input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
+                                </form>
                             </div>
                         </td>
                         <td class="cart_total">
@@ -65,22 +60,13 @@
                             </p>
                         </td>
                         <td class="cart_delete">
-                            <a class="cart_quantity_delete" href="{{url('/delete-product-ajax/'.$cart['session_id'])}}"><i class="fa fa-times"></i></a>
+                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
                         </td>
                     </tr>
                 @endforeach
 
-                <tr>
-                        <td>
-                            <input type="submit" value="Cập nhật giỏ hàng" name="update_qty" class="btn btn-default btn-sm check_out">
-                        </td>
-                    </tr>
-
                 </tbody>
-
             </table>
-            </form>
-
         </div>
 
 
@@ -90,11 +76,11 @@
 </section> <!--/#cart_items-->
 <section id="do_action">
     <div class="container">
-{{--        <div class="heading">--}}
-{{--            <h3>What would you like to do next?</h3>--}}
-{{--            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your--}}
-{{--                delivery cost.</p>--}}
-{{--        </div>--}}
+        {{--        <div class="heading">--}}
+        {{--            <h3>What would you like to do next?</h3>--}}
+        {{--            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your--}}
+        {{--                delivery cost.</p>--}}
+        {{--        </div>--}}
         <div class="row">
             <div class="col-sm-6">
                 <div class="total_area">
@@ -104,21 +90,7 @@
                         <li>Phí vận chuyển <span>Free</span></li>
                         <li>Thành tiền <span></span></li>
                     </ul>
-{{--                    <a class="btn btn-default check_out" href="">Thanh toán</a>--}}
-                    <?php
-                    $customer_id = \Illuminate\Support\Facades\Session::get('customer_id');
-                    if($customer_id!=NULL){
-                    ?>
-
-                    <a class="btn btn-default check_out" href="{{\Illuminate\Support\Facades\URL::to('/checkout')}}">Thanh toán</a>
-                    <?php
-                    }else{
-                    ?>
-
-                    <a class="btn btn-default check_out" href="{{\Illuminate\Support\Facades\URL::to('/login-checkout')}}">Thanh toán</a>
-                    <?php
-                    }
-                    ?>
+                    <a class="btn btn-default check_out" href="">Thanh toán</a>
                 </div>
             </div>
         </div>
