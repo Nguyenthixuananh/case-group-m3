@@ -11,7 +11,8 @@ class Brand extends Model
 
     public $timestamps = false;
     //set thoi gian k cho chay
-    protected $fillable= ['brand_name'
+    protected $fillable= [
+        'brand_name'
         ,'brand_desc'
         , 'brand_status'
     ];

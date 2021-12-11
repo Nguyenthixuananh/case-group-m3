@@ -53,7 +53,7 @@ class BrandProduct extends Controller
 //
 //        DB::table('tbl_brand_product')->insert($data);
 
-        Session::put('message', 'Thêm danh mục sản phẩm thành công');
+        Session::put('message', 'Thêm thương hiệu sản phẩm thành công');
         return Redirect::to('all-brand-product');
     }
 
@@ -61,7 +61,7 @@ class BrandProduct extends Controller
     {
         $this->authLogin();
         DB::table('tbl_brand_product')->where('brand_id', $brand_product_id)->update(['brand_status'=>1]);
-        Session::put('message', 'Không kích hoạt danh mục sản phẩm thành công');
+        Session::put('message', 'Đã ẩn thương hiệu sản phẩm');
         return Redirect::to('all-brand-product');
 
     }
@@ -69,7 +69,7 @@ class BrandProduct extends Controller
     {
         $this->authLogin();
         DB::table('tbl_brand_product')->where('brand_id', $brand_product_id)->update(['brand_status'=>0]);
-        Session::put('message', 'Kích hoạt danh mục sản phẩm thành công');
+        Session::put('message', 'Kích hoạt thương hiệu sản phẩm thành công');
         return Redirect::to('all-brand-product');
     }
 

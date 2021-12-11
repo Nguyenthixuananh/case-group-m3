@@ -9,10 +9,7 @@
             <div class="row w3-res-tb">
                 <div class="col-sm-3">
                     <div class="input-group">
-                        <input type="text" class="input-sm form-control" placeholder="Search">
-                        <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
-          </span>
+
                     </div>
                 </div>
             </div>
@@ -27,11 +24,7 @@
                 <table class="table table-striped b-t b-light">
                     <thead>
                     <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
+                        <th>STT</th>
                         <th>Tên sản phẩm</th>
                         <th>Gía</th>
                         <th>Hình sản phẩm</th>
@@ -43,8 +36,7 @@
                     <tbody>
                     @foreach($all_product as $key=> $pro)
                         <tr>
-                            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label>
-                            </td>
+                            <td>{{$key+1}}</td>
                             <td>{{ $pro->product_name }}</td>
                             <td>{{ $pro->product_price }}</td>
                             <td><img src="{{ asset('upload/product/'. $pro->product_image) }}" width="100px"></td>

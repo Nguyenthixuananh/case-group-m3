@@ -41,6 +41,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">
         </form>
+        <hr>
+
+        <div class="form-group row mb-0">
+
+            <div class="col-md-8 offset-md-4">
+
+                <a href="{{ url('/auth/redirect/google') }}" class="btn btn-primary"><i class="fa fa-google"></i> Google</a>
+
+            </div>
+
+        </div>
         <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
     </div>
 </div>

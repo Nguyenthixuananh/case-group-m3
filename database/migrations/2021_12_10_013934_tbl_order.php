@@ -18,8 +18,8 @@ class TblOrder extends Migration
             $table->integer('customer_id');
             $table->integer('shipping_id');
             $table->integer('payment_id');
-            $table->float('order_total');
-            $table->integer('order_status');
+            $table->text('order_total');
+            $table->text('order_status');
 
             $table->timestamps();
         });

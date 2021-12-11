@@ -5,13 +5,10 @@
     <div class="product-details"><!--product-details-->
         <div class="col-sm-5">
             <div class="view-product">
-<<<<<<< HEAD
                 <img src="{{ asset('upload/product/'.$value->product_image) }}" class="newarrival" alt=""/>
-=======
                 <img src="{{ asset('upload/product/' . $value->product_image) }}" width="100px">
 {{--                <img src="{{\Illuminate\Support\Facades\URL::to('/public/upload/product/'.$value->product_image)}}"--}}
 {{--                     alt=""/>--}}
->>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                 <h3>ZOOM</h3>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -32,12 +29,7 @@
                 </div>
 
                 <!-- Controls -->
-                <a class="left item-control" href="#similar-product" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right item-control" href="#similar-product" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
+
             </div>
 
         </div>
@@ -76,7 +68,6 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#details" data-toggle="tab">Mô tả</a></li>
                 <li><a href="#companyprofile" data-toggle="tab">Chi tiết sản phẩm</a></li>
-                {{--            <li><a href="#tag" data-toggle="tab">Tag</a></li>--}}
                 <li><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
             </ul>
         </div>
@@ -186,7 +177,7 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img
-                                        src="{{\Illuminate\Support\Facades\URL::to('/public/upload/product/'.$lienquan->product_image)}}"
+                                        src="{{asset('upload/product/'.$lienquan->product_image)}}"
                                         alt=""/>
                                     <h2>{{number_format($lienquan->product_price).'VND'}}</h2>
                                     <p>{{$lienquan->product_name}}</p>
@@ -202,12 +193,7 @@
 
 
         </div>
-        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-        </a>
-        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-        </a>
+
     </div>
 </div><!--/recommended_items-->
 

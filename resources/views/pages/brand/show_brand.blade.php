@@ -11,12 +11,9 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-<<<<<<< HEAD
                         <img src="{{ asset('upload/product/'.$product->product_image) }}" alt="" />
-=======
                         <img  alt="">
                         <img src="{{\Illuminate\Support\Facades\URL::to('public/upload/product/'.$product->product_image)}}" alt="" />
->>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                         <h3>{{$product->product_price}} VNĐ</h3>
                         <p>{{$product->product_name}}</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>

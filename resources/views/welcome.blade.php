@@ -65,27 +65,9 @@
                         <a href="index.html"><img src="{{('public/frontend/images/home/logo.png')}}" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
-                            </ul>
-                        </div>
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
-                            </ul>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -147,22 +129,22 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
-                            <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
+{{--                    <div class="mainmenu pull-left">--}}
+{{--                        <ul class="nav navbar-nav collapse navbar-collapse">--}}
+{{--                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>--}}
+{{--                            <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>--}}
+{{--                                <ul role="menu" class="sub-menu">--}}
+{{--                                    <li><a href="shop.html">Products</a></li>--}}
 
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>--}}
 
-                            </li>
-                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/show-cart')}}">Giỏ hàng</a></li>
-                            <li><a href="contact-us.html">Liên hệ</a></li>
-                        </ul>
-                    </div>
+{{--                            </li>--}}
+{{--                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/show-cart')}}">Giỏ hàng</a></li>--}}
+{{--                            <li><a href="contact-us.html">Liên hệ</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="col-sm-5">
                     <form action="{{\Illuminate\Support\Facades\URL::to('/tim-kiem')}}" method="POST">
@@ -266,7 +248,7 @@
                                 <ul class="nav nav-pills nav-stacked">
                                     <li>
                                         <a href="{{\Illuminate\Support\Facades\URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}">
-                                            <span class="pull-right">(50)</span>{{$brand->brand_name}}</a></li>
+                                            <span class="pull-right"></span>{{$brand->brand_name}}</a></li>
                                 </ul>
                             @endforeach
                         </div>

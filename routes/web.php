@@ -5,8 +5,10 @@ use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomehomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 //frontend. Tra ve kq phia ng dung
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/trang-chu',[HomeController::class, 'index']);
-Route::post('/tim-kiem',[HomeController::class, 'search']);
+Route::get('/', [HomehomeController::class, 'index']);
+Route::get('/trang-chu',[HomehomeController::class, 'index']);
+Route::post('/tim-kiem',[HomehomeController::class, 'search']);
 
 //danh muc san pham trang chu
 Route::get('/danh-muc-san-pham/{category_id}',[CategoryProduct::class, 'show_category_home']);
@@ -101,3 +103,16 @@ Route::post('/save-checkout-customer',[CheckoutController::class, 'save_checkout
 //Order
 Route::get('/manage-order',[CheckoutController::class, 'manage_order']);
 Route::get('/view-order/{orderId}',[CheckoutController::class, 'view_order']);
+
+//gg
+//Route::get('/login-google', [LoginController::class, 'login_google']);
+//Route::get('/google/callback', [LoginController::class, 'callback_google']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/auth/redirect/{provider}', [SocialController::class,'redirect']);
+
+Route::get('/callback/{provider}', [SocialController::class, 'callback']);
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

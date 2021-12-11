@@ -40,13 +40,13 @@
         <div class="top-nav clearfix">
             <!--search & user info start-->
             <ul class="nav pull-right top-menu">
-                <li>
-                    <input type="text" class="form-control search" placeholder=" Search">
-                </li>
+{{--                <li>--}}
+{{--                    <input type="text" class="form-control search" placeholder=" Search">--}}
+{{--                </li>--}}
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="{{asset('backend/images/2.png')}}">
+                        <img alt="" src="https://i.pinimg.com/564x/78/c4/6d/78c46dfdbbbf8c516c4bf62fd274b249.jpg">
                         <span class="username">
                              <?php
                             $name = \Illuminate\Support\Facades\Session::get('admin_name');
@@ -121,11 +121,11 @@
                             <span>Sản phẩm</span>
                         </a>
                         <ul class="sub">
-                            {{-- <li><a href="{{\Illuminate\Support\Facades\URL::to('/add-product')}}">Thêm sản phẩm</a></li>
-                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/all-product')}}">Liệt kê sản phẩm</a></li> --}}
-
-                            <li><a href="#" data-toggle="modal" data-target=".myModal">Thêm sản phẩm</a></li>
+                             <li><a href="{{\Illuminate\Support\Facades\URL::to('/add-product')}}">Thêm sản phẩm</a></li>
                             <li><a href="{{\Illuminate\Support\Facades\URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
+
+{{--                            <li><a href="#" data-toggle="modal" data-target=".myModal">Thêm sản phẩm</a></li>--}}
+{{--                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>--}}
                         </ul>
                     </li>
 
