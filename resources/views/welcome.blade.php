@@ -13,6 +13,7 @@
     <link href="{{ asset('frontend/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/sweetalert.css') }}" rel="stylesheet">
 <!--[if lt IE 9]>
     <script src="{{ asset('frontend/js/html5shiv.js') }}"></script>
     <script src="{{ asset('frontend/js/respond.min.js') }}"></script>
@@ -61,32 +62,85 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="{{ asset('frontend/images/home/logo.png') }}" alt=""/></a>
+                        <a href="index.html"><img src="{{('public/frontend/images/home/logo.png')}}" alt="" /></a>
+                    </div>
+                    <div class="btn-group pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                USA
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">UK</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                DOLLAR
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Canadian Dollar</a></li>
+                                <li><a href="#">Pound</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-8">
-                    <form action="{{URL::to('/tim-kiem')}}" method="POST">
-                        {{csrf_field()}}
-                        <div class="search_box pull-right">
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
-                            <input type="submit" style="margin-top:0;color:#666;background-color: #4BC3E0"
-                                   name="search_items"
-                                   class="btn btn-primary btn-sm" value="Tìm kiếm">
-                        </div>
-                    </form>
+                    <div class="shop-menu pull-right">
+                        <ul class="nav navbar-nav">
+
+                            <li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
+                            <?php
+                            use Illuminate\Support\Facades\Session;$customer_id =Session::get('customer_id');
+                            $shipping_id = Session::get('shipping_id');
+                            if($customer_id!=NULL && $shipping_id==NULL){
+                            ?>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+
+                            <?php
+                            }elseif($customer_id!=NULL && $shipping_id!=NULL){
+                            ?>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                            <?php
+                            }else{
+                            ?>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                            <?php
+                            }
+                            ?>
+
+
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                            <?php
+                            $customer_id = Session::get('customer_id');
+                            if($customer_id!=NULL){
+                            ?>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
+
+                            <?php
+                            }else{
+                            ?>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                            <?php
+                            }
+                            ?>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div><!--/header-middle-->
 
     <div class="header-bottom"><!--header-bottom-->
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-7">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -95,8 +149,7 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/trang-chu')}}" class="active">Trang
-                                    chủ</a></li>
+                            <li><a href="{{\Illuminate\Support\Facades\URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
                             <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
@@ -111,13 +164,15 @@
                         </ul>
                     </div>
                 </div>
-                {{--                <div class="col-sm-3">--}}
-                {{--                    <div class="search_box pull-right">--}}
-                {{--                        <input type="text" placeholder="Search"/>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-
-
+                <div class="col-sm-5">
+                    <form action="{{\Illuminate\Support\Facades\URL::to('/tim-kiem')}}" method="POST">
+                        @csrf
+                        <div class="search_box pull-right">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" style="margin-top:0;color:#666" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div><!--/header-bottom-->
@@ -239,9 +294,7 @@
     {{-- <div class="footer-top"> --}}
         <div class="container">
             <div class="row">
-<<<<<<< HEAD
-              
-=======
+
                 <div class="col-sm-6">
                     <div class="companyinfo">
                         <h2><span>S2</span>-Maybi</h2>
@@ -253,7 +306,6 @@
                 </div>
                 <div class="col-sm-1">
 
->>>>>>> ba353975b2fd3c64ad2334bdc0939bbab43a9e71
                 </div>
                 <div class="col-sm-5">
                     <div class="single-widget">
@@ -334,5 +386,46 @@
 <script src="{{ asset('frontend/js/price-range.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.prettyPhoto.js') }}"></script>
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+{{--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
+<script src="{{ asset('frontend/js/sweetalert.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.add-to-cart').click(function(){
+
+
+        var id = $(this).data('id_product');
+            var cart_product_id = $('.cart_product_id_' + id).val();
+            var cart_product_name = $('.cart_product_name_' + id).val();
+            var cart_product_image = $('.cart_product_image_' + id).val();
+            var cart_product_price = $('.cart_product_price_' + id).val();
+            var cart_product_qty = $('.cart_product_qty_' + id).val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: '{{url('/add-cart-ajax')}}',
+                method: 'POST',
+                data:{cart_product_id:cart_product_id,cart_product_name:cart_product_name,cart_product_image:cart_product_image,cart_product_price:cart_product_price,cart_product_qty:cart_product_qty,_token:_token},
+                success:function(){
+
+                    swal({
+                            title: "Đã thêm sản phẩm vào giỏ hàng",
+                            text: "Bạn có thể mua hàng tiếp hoặc tới giỏ hàng để tiến hành thanh toán",
+                            showCancelButton: true,
+                            cancelButtonText: "Xem tiếp",
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Đi đến giỏ hàng",
+                            closeOnConfirm: false
+                        },
+                        function() {
+                            window.location.href = "{{url('/gio-hang')}}";
+                        });
+
+                }
+
+            });
+        });
+    }
+    );
+</script>
+
 </body>
 </html>

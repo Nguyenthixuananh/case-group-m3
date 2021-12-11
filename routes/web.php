@@ -22,8 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 //frontend. Tra ve kq phia ng dung
 Route::get('/', [HomeController::class, 'index']);
-
 Route::get('/trang-chu',[HomeController::class, 'index']);
+Route::post('/tim-kiem',[HomeController::class, 'search']);
 
 //danh muc san pham trang chu
 Route::get('/danh-muc-san-pham/{category_id}',[CategoryProduct::class, 'show_category_home']);
@@ -79,6 +79,13 @@ Route::post('/update-cart-quantity',[CartController::class, 'update_cart_quantit
 Route::post('/save-cart',[CartController::class, 'save_cart']);
 Route::get('/show-cart',[CartController::class, 'show_cart']);
 Route::get('/delete-to-cart/{rowId}',[CartController::class, 'delete_to_cart']);
+Route::post('/add-cart-ajax',[CartController::class, 'add_cart_ajax']);
+Route::get('/gio-hang',[CartController::class, 'gio_hang']);
+Route::post('/update-cart',[CartController::class, 'update_cart']);
+Route::get('/del-product/{session_id}',[CartController::class, 'delete_product']);
+Route::get('/del-all-product',[CartController::class, 'delete_all_product']);
+
+
 
 //Checkout
 

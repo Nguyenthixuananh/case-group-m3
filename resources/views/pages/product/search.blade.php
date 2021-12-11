@@ -5,7 +5,7 @@
         @foreach($search_product as $key => $product)
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
-                    <a href="{{\Illuminate\Support\Facades\URL::to('/chi-tiet-san-pham/'.$product->product_slug)}}">
+                    <a href="{{\Illuminate\Support\Facades\URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <img src="{{\Illuminate\Support\Facades\URL::to('public/uploads/product/'.$product->product_image)}}" alt="" />
